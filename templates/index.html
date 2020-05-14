@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% block content %}
 
-	<title>Home page</title>
-</head>
+{% for post in posts %}
+<!-- content specific to the index page -->
+<h1>{{ post.title }}</h1>
+<p>By {{ post.author }} on {{ post.date_posted }}</p>
+<p>{{ post.content }}</p>
+{% endfor %}
 
-<body>
-
-	<h1>Home page</h1>
-
-    {% for post in posts %}
-
-    <h1 style="font-size: 74px; color: #a08888;">{{ post.title }} </h1>
-    <p>By {{ post.author }} on {{ post.date_posted }}</p>
-    <p>{{ post.content }}</p>
-    {% endfor %}
-
-</body>
-
-</html>
+{% endblock content %}
