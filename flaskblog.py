@@ -1,7 +1,8 @@
 import os
 from flask import Flask, render_template, url_for
-
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = 'b56362ae8d7b62f9c23b5e8047259ba6'
 
 posts = [
     {
